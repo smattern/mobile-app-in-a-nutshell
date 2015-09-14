@@ -1,11 +1,15 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-divider">Recent Updates</div>
+    <div class="list card" ng-repeat="(key, value) in data">
+      <div class="item item-divider">{{key}}</div>
       <div class="item item-body">
+
         <div>
-          {{data}}
+
+          {{value}}
+
         </div>
+
       </div>
     </div>
   </ion-content>

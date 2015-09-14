@@ -1,18 +1,29 @@
 angular.module('starter.controllers', [])
 
+/**
+ * Controller for the dash view, this controller handle all dash functionality.
+ *
+ * @param $scope
+ * @param WebService, handle request
+ */
+  .controller('DashCtrl', function ($scope, WebService) {
 
-.controller('DashCtrl', function($scope, $http) {
+    /**
+     * On view is entered load all info from server
+     */
+    $scope.$on('$ionicView.enter', function () {
 
-    console.log('Success of controller');
+      var promise = WebService.all();
 
-  $http.get('http://localhost:3000/infos').then(function(resp) {
+      promise.then(
+        function (payload) {
 
-    console.log(resp);
+          $scope.data = payload.data;
 
-    $scope.data = resp.data;
+        },
+        function (errorPayload) {
+          Console.error('failure loading content', errorPayload);
+        });
+    }); // end of function
 
-    }, function(err) {
-      console.error('ERR');
-      // err.status will contain the status code
-    })
-});
+  });
