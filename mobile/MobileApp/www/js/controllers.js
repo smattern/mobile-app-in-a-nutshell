@@ -26,4 +26,32 @@ angular.module('starter.controllers', [])
         });
     }); // end of function
 
-  });
+  })
+
+/**
+ * Controller the the camera view.
+ *
+ * @param $scope
+ * @param Camera, the service to handle the camera
+ */
+  .controller('InfoOneCtrl', function ($scope, Camera) {
+
+    /**
+     * Take a picture.
+     */
+    $scope.getPhoto = function () {
+
+      Camera.getPicture(
+        {
+          saveToPhotoAlbum: true
+        }
+      ).then(function (imageURI) {
+          console.log(imageURI);
+        }, function (err) {
+          console.err(err);
+        });
+
+    }
+
+  })
+;
