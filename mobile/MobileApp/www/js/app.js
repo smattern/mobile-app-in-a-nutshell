@@ -53,6 +53,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       })
 
+      .state('tab.three', {
+        url: '/three',
+        views: {
+          'tab-info-three': {
+            templateUrl: 'templates/tab-info-three.html',
+            controller: 'InfoThreeCtrl'
+          }
+        }
+      })
+
       .state('tab.photo', {
         url: '/photo',
         views: {

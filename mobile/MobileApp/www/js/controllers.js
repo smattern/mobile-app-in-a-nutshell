@@ -56,6 +56,17 @@ angular.module('starter.controllers', [])
   })
 
 /**
+ * Controller for a very simple view.
+ *
+ * @param $scope
+ */
+  .controller("InfoThreeCtrl", function($scope) {
+    $scope.list = [
+      {text:'angluarjs'},
+      {text:'jQuery'}];
+  })
+
+/**
  * Controller for the list view.
  *
  * @param $scope

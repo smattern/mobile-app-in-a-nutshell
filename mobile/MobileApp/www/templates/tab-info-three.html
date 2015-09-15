@@ -1,0 +1,28 @@
+<ion-view view-title="Simple">
+  <ion-content>
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        {{list.length}} elements
+      </div>
+    </div>
+
+    <ul>
+      <li ng-repeat="element in list">
+
+        <label class="item item-input">
+          <span class="input-label">Eingabe</span>
+          <input type="text" ng-model="element.text">
+        </label>
+
+        <div class="card">
+          <div class="item item-text-wrap">
+            {{element.text}}
+          </div>
+        </div>
+
+      </li>
+    </ul>
+
+  </ion-content>
+</ion-view>
